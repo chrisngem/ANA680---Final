@@ -13,7 +13,7 @@ def predict():
     tdp = request.form['tdp']
     die_size = request.form['die_size']
     transistors = request.form['transistors']
-    pred = knn.predict(np.array([[tdp,die_size,transistors]]))
+    pred = model.predict(np.array([[tdp,die_size,transistors]]))
     print(pred)
     return render_template('index.html', predict=str(pred))
 if __name__ == '__main__':
